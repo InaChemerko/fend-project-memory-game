@@ -48,6 +48,7 @@ restart[0].addEventListener('click', function (){
   resetGame();
 }); 
 
+/* restart new game */
 function resetGame(){
   if (deck[0].classList.contains('hide')){
     deck[0].classList.remove('hide');
@@ -70,6 +71,7 @@ resetButton.addEventListener('click', function(){
   resetGame();
 });
 
+/* start to play */
 function play(){
   deck[0].innerHTML = '';
   shuffledCards = shuffle(cards);
@@ -87,7 +89,8 @@ function play(){
   function showMovs(count){
     moves[0].innerText = count;
    }
-
+ 
+ /* display cards */
  function display (event) {
     checkStars();
     if (!cardsOpen.includes(event.target)) {
@@ -111,6 +114,7 @@ function play(){
       };
    };
 
+/* check for matching */
    function check(){
   if (cardsOpen[0].dataset.card === cardsOpen[1].dataset.card) {
     cardsOpen[0].classList.add('match'); 
@@ -157,6 +161,7 @@ function checkStars(){
      }
  } 
 
+/* display model */
 function congratulations(){
 if(message){
     modalHeading.removeChild(message);

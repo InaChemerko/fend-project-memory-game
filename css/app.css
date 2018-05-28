@@ -81,6 +81,12 @@ h1 {
     font-size: 33px;
 }
 
+.hide{
+  pointer-events: none;
+  opacity: 0.4;
+}  
+
+
 /*
  * Styles for the Score Panel
  */
@@ -112,6 +118,10 @@ h1 {
      opacity: 0.3
  }
 
+ /*
+ * Styles for modal
+ */
+
  .modal{
     display: none;
     position: absolute;
@@ -129,7 +139,3 @@ h1 {
     
 }
 
-.hide{
-  pointer-events: none;
-  opacity: 0.4;
-}
