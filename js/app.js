@@ -48,7 +48,7 @@ restart[0].addEventListener('click', function (){
   resetGame();
 }); 
 
-/* restart new game */
+/* restart the new game */
 function resetGame(){
   if (deck[0].classList.contains('hide')){
     deck[0].classList.remove('hide');
