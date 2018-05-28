@@ -112,7 +112,7 @@ function play(){
    };
 
    function check(){
-  if (cardsOpen[0].type === cardsOpen[1].type) {
+  if (cardsOpen[0].dataset.card === cardsOpen[1].dataset.card) {
     cardsOpen[0].classList.add('match'); 
     cardsOpen[1].classList.add('match');
     cardsMatch.push(cardsOpen[0]);
@@ -120,10 +120,10 @@ function play(){
     cardsOpen = [];
      } else {
     setTimeout(function(){
-        cardsOpen[0].classList.remove('open');
-        cardsOpen[0].classList.remove('show');
-        cardsOpen[1].classList.remove('open');
-        cardsOpen[1].classList.remove('show');
+       cardsOpen[0].classList.remove('open'); 
+       cardsOpen[0].classList.remove('show');
+       cardsOpen[1].classList.remove('open');
+       cardsOpen[1].classList.remove('show');
         cardsOpen = [];
   }, 1000);
   };
