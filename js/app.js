@@ -90,6 +90,7 @@ function play(){
 
  function display (event) {
     checkStars();
+    if (!cardsOpen.includes(event.target)) {
    if (cardsOpen.length <2){
      event.target.classList.add('open');
      event.target.classList.add('show');
@@ -98,6 +99,7 @@ function play(){
    if (cardsOpen.length === 2) {
       check();
    };
+ }
 
    movesCounter++;
    showMovs(movesCounter);
