@@ -86,6 +86,9 @@ h1 {
   opacity: 0.4;
 }  
 
+.deck .card.click {
+    pointer-events: none;
+}
 
 /*
  * Styles for Score Panel

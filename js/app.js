@@ -92,21 +92,22 @@ function play(){
  
  /* display cards */
  function display (event) {
-    //checkStars();
-    if (!cardsOpen.includes(event.target)) {
-   if (cardsOpen.length <2){
+    
+  if (!cardsOpen.includes(event.target)) {
+   if (cardsOpen.length < 2){
      event.target.classList.add('open');
      event.target.classList.add('show');
+     event.target.classList.add('click'); 
      cardsOpen.push(event.target);
-     }; 
+     };
    if (cardsOpen.length === 2) {
       check();
    };
  }
 
    movesCounter++;
-   checkStars();
-   showMovs(movesCounter);
+      checkStars();
+   showMovs(movesCounter); 
    if (movesCounter === 1) {
      beginningTime();
    }
@@ -114,6 +115,7 @@ function play(){
         gameOver(); 
       };
    };
+  
 
 /* check for matching */
    function check(){
@@ -129,6 +131,8 @@ function play(){
        cardsOpen[0].classList.remove('show');
        cardsOpen[1].classList.remove('open');
        cardsOpen[1].classList.remove('show');
+       cardsOpen[0].classList.remove('click');
+       cardsOpen[1].classList.remove('click');
         cardsOpen = [];
   }, 1000);
   };
