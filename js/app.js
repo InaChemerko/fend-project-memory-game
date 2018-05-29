@@ -65,8 +65,15 @@ resetCards.forEach(function(card){
  stars[1].classList.remove('loose');
  stars[2].classList.remove('loose');
  modal[0].style.display ='none';
+ for (let card of cardsMatch){
+  card.classList.remove('open'); 
+  card.classList.remove('show'); 
+  card.classList.remove('match');
+ };
  cardsMatch = [];
+ cardsOpen = [];
 }
+
 resetButton.addEventListener('click', function(){
   resetGame();
 });
