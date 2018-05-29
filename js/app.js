@@ -92,7 +92,7 @@ function play(){
  
  /* display cards */
  function display (event) {
-    checkStars();
+    //checkStars();
     if (!cardsOpen.includes(event.target)) {
    if (cardsOpen.length <2){
      event.target.classList.add('open');
@@ -105,6 +105,7 @@ function play(){
  }
 
    movesCounter++;
+   checkStars();
    showMovs(movesCounter);
    if (movesCounter === 1) {
      beginningTime();
