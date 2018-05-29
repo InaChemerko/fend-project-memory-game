@@ -76,6 +76,7 @@ function play(){
   deck[0].innerHTML = '';
   shuffledCards = shuffle(cards);
   for (let card of shuffledCards){
+    card.addEventListener("click", display);
     deck[0].appendChild(card);
   }
   
@@ -83,7 +84,7 @@ function play(){
   showMovs(movesCounter);
 } 
 
-  deck[0].addEventListener("click", display);
+  //deck[0].addEventListener("click", display);
 
 
   function showMovs(count){
@@ -92,18 +93,18 @@ function play(){
  
  /* display cards */
  function display (event) {
-    
-  if (!cardsOpen.includes(event.target)) {
+    if (!cardsOpen.includes(event.target) && !cardsMatch.includes(event.target)) {
    if (cardsOpen.length < 2){
      event.target.classList.add('open');
      event.target.classList.add('show');
-     event.target.classList.add('click'); 
      cardsOpen.push(event.target);
      };
    if (cardsOpen.length === 2) {
       check();
    };
- }
+ } else{
+     return;
+   }
 
    movesCounter++;
       checkStars();
@@ -114,6 +115,7 @@ function play(){
    if (cardsMatch.length === cards.length){
         gameOver(); 
       };
+   
    };
   
 
@@ -131,9 +133,7 @@ function play(){
        cardsOpen[0].classList.remove('show');
        cardsOpen[1].classList.remove('open');
        cardsOpen[1].classList.remove('show');
-       cardsOpen[0].classList.remove('click');
-       cardsOpen[1].classList.remove('click');
-        cardsOpen = [];
+       cardsOpen = [];
   }, 1000);
   };
   }
