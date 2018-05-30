@@ -1,22 +1,22 @@
 /*
  * Create a list that holds all of your cards
  */
-let cardsList = document.getElementsByClassName('card');
+const cardsList = document.getElementsByClassName('card');
 let cards = Array.from(cardsList);
-let deck = document.getElementsByClassName('deck');
+const deck = document.getElementsByClassName('deck');
 let cardsOpen = []; //array for open cards
 let cardsMatch = []; //array for match cards
 let movesCounter = 0;
-let moves = document.getElementsByClassName('moves');
-let time = document.getElementById('time');
-let restart = document.getElementsByClassName('restart');
+const moves = document.getElementsByClassName('moves');
+const time = document.getElementById('time');
+const restart = document.getElementsByClassName('restart');
 let seconds = 0;
 let minutes = 0;
 let setTime;
-let stars = document.getElementsByClassName('stars')[0].getElementsByTagName('li');
-let modal=document.getElementsByClassName('modal');
-let modalHeading = document.getElementById('modal-heading');
-let resetButton = document.getElementById('playAgain');
+const stars = document.getElementsByClassName('stars')[0].getElementsByTagName('li');
+const modal=document.getElementsByClassName('modal');
+const modalHeading = document.getElementById('modal-heading');
+const resetButton = document.getElementById('playAgain');
 let message;
 /*
  * Display the cards on the page
@@ -90,9 +90,6 @@ function play(){
   movesCounter = 0;
   showMovs(movesCounter);
 } 
-
-  //deck[0].addEventListener("click", display);
-
 
   function showMovs(count){
     moves[0].innerText = count;
