@@ -40,32 +40,34 @@ function shuffle(array) {
     return array;
 };
 
-document.addEventListener("DOMContentLoaded", play);// ready to play;
+/* ready to play */
+document.addEventListener("DOMContentLoaded", play);
 
 let shuffledCards=[];
-
-restart[0].addEventListener('click', function (){
+ 
+ /* add an event listener  to "reset" button */
+restart[0].addEventListener('click',function (){
   resetGame();
 }); 
 
 /* restart the new game */
 function resetGame(){
-  if (deck[0].classList.contains('hide')){
-    deck[0].classList.remove('hide');
+  if (deck[0].classList.contains('hide')){ 
+    deck[0].classList.remove('hide'); //remove the lock deck
   };
   seconds = 0;
   minutes = 0;
   clearInterval(setTime);
-  time.innerHTML = `<time id = "time">${minutes}:${seconds}</time>`;
+  time.innerHTML = `<time id = "time">${minutes}:${seconds}</time>`; //reset timer
   play();
 let resetCards = document.querySelectorAll('.deck li');
 resetCards.forEach(function(card){
   card.classList = 'card';  
 });
- stars[1].classList.remove('loose');
+ stars[1].classList.remove('loose'); //remove the transparency from the stars
  stars[2].classList.remove('loose');
- modal[0].style.display ='none';
- for (let card of cardsMatch){
+ modal[0].style.display ='none'; // remove modal with congratulations
+ for (let card of shuffledCards){
   card.classList.remove('open'); 
   card.classList.remove('show'); 
   card.classList.remove('match');
@@ -75,7 +77,7 @@ resetCards.forEach(function(card){
 }
 
 resetButton.addEventListener('click', function(){
-  resetGame();
+  resetGame(); //add an event listener  to "play again" button
 });
 
 /* start to play */
@@ -92,7 +94,7 @@ function play(){
 } 
 
   function showMovs(count){
-    moves[0].innerText = count;
+    moves[0].innerText = count; //display the moves
    }
  
  /* display cards */
@@ -142,6 +144,7 @@ function play(){
   };
   }
 
+/* start the timer */
 function beginningTime(){
   setTime = setInterval(function (){
     seconds++;
@@ -153,13 +156,15 @@ function beginningTime(){
    }, 1000);
   
 };
-
+ 
+ /* finish the game when all cards matched */
 function gameOver() {
-  deck[0].classList.add('hide');
+  deck[0].classList.add('hide'); //block the deck
   clearInterval(setTime);
   congratulations();
 };
-
+ 
+ /* change star rating */
 function checkStars(){
   if(movesCounter == 18){
      stars[2].classList.add('loose');
